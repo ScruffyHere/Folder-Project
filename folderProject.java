@@ -20,7 +20,7 @@ public static void menu(){
       if(!f.exists())	{
         f.mkdir();
      }
-     
+
       else	{
      System.err.println("Directory already exists.");
         System.exit(0);
@@ -49,17 +49,15 @@ public static void menu(){
               int semesterNumber = input.nextInt();
 
              switch( semesterNumber ){
+
              case 1:
-                 System.out.println("Exiting...");
-                 break;
+                 
 
              case 2:
-                 include();
-                 break;
+                 
 
              case 3:
-                 change();
-                 break;
+                
 
              default:
                  System.out.println("Unknown selection.");
