@@ -67,7 +67,6 @@ public static void menu(){
                }
            } while(numSemester < 1 || numSemester > 3);*/
        }
-         System.out.println("\nThank you for using my program.");
-
+     System.out.println("\nThank you for using my program.");
   }
 }
