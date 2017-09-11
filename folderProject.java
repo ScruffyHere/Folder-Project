@@ -4,12 +4,13 @@ import java.util.Scanner;
 public class folderProject {
 
 public static void menu(){
-  System.out.println("1. Fall");
-  System.out.println("2. Spring");
-  System.out.println("3. Summer");
-  System.out.println("\nChoose your semester's number: ");
+  System.out.println ("----------------------------------");
+  System.out.println ("| Choose your semester's number: |");
+  System.out.println ("----------------------------------");
+  System.out.println ("1. \tFall");
+  System.out.println ("2. \tSpring");
+  System.out.println ("3. \tSummer");
 }
-
    public static void main(String[] args) {
      Scanner input = new Scanner(System.in);
      
@@ -30,6 +31,8 @@ public static void menu(){
       System.out.print ("\nType amount of subfolders needed within your base folder: ");
         int subFolder = input.nextInt();
 
+      input.nextLine();
+
       String[] sFolder = new String[subFolder];
 
         for(int i=0; i<subFolder; i++)   {
@@ -44,29 +47,31 @@ public static void menu(){
     			  System.err.println("Directory already exists.");
              System.exit(0);
             }
+        }
 
-        /*  do {
+            int semFolder;
+
+            do {
               menu();
-                int numSemester = input.nextInt();
+                semFolder = input.nextInt();
 
-            switch(numSemester){
-              case 1:
-                System.out.println("Case 1");
+            switch(semFolder){
+              case 1:   //August, September, October, November, December
+                System.out.println("Case 1 was selected");
                   break;
 
-              case 2:
-                System.out.println("Case 2");
+              case 2:   //January, February, March, April, May
+                System.out.println("Case 2 was selected");
                   break;
 
-              case 3:
-                System.out.println("Case 3");
+              case 3:   //June, July, 
+                System.out.println("Case 3 was selected");
                   break;
 
-              default:
-                System.out.println("unknown selection.");
+            default:
+                System.out.println("Unknown Selection, please try again.");
               }
-            } while(numSemester < 1 || numSemester > 3); */
-       }
-     System.out.println("\nThank you for using my program.");
+            } while (semFolder < 1 || semFolder > 3);
+     System.out.println("\nThank you for using my program!");
    }
  }
