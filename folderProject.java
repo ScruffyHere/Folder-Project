@@ -10,6 +10,8 @@ public static void menu(){
   System.out.println ("1. \tFall");
   System.out.println ("2. \tSpring");
   System.out.println ("3. \tSummer");
+  System.out.println ("4. \tExit");
+
 }
    public static void main(String[] args) {
      Scanner input = new Scanner(System.in);
@@ -35,7 +37,7 @@ public static void menu(){
 
       String[] sFolder = new String[subFolder];
 
-        for(int i=0; i<subFolder; i++)   {
+        for(int i=0; i < subFolder; i++)   {
           System.out.print ("Enter your subfolders name: ");
             sFolder[i] = input.next();
 
@@ -67,6 +69,10 @@ public static void menu(){
               case 3:   //June, July, 
                 System.out.println("Case 3 was selected");
                   break;
+                  
+              case 4:   //Exit program
+               System.out.println ("Thank you for using my program!");
+               System.exit(0);
 
             default:
                 System.out.println("Unknown Selection, please try again.");
