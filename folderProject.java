@@ -1,12 +1,7 @@
 	//Library imports for folder creation('*' means import all library) and keyboard input.
 import java.io.*;
 import java.util.Scanner;
-<<<<<<< HEAD
-/*Test*/
-=======
 
-//testing
->>>>>>> 5e1db29ec6e8e9574751cfaad654a4e12878e955
 	//My Project class.
 public class folderProject {
 
