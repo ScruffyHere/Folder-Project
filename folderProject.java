@@ -2,6 +2,7 @@
 import java.io.*;
 import java.util.Scanner;
 
+//learning purporses
 	//Our Project class.
 public class folderProject {
 
