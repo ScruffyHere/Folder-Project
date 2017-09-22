@@ -27,7 +27,7 @@ public class folderProject {
 
         else	{
 
-          System.err.println("Directory already exists.");
+          System.err.println ("Directory already exists.");
 
           System.exit(0);	//Since directory already exists, I want to repromt folder name question instead of existing program.
         }
@@ -58,7 +58,7 @@ public class folderProject {
 
            else	{
 
-    			System.err.println("Directory already exists.");
+    			System.err.println ("Directory already exists.");
 
              	System.exit(0);	//Since directory already exists, I want to repromt folder name question instead of existing program.
             }
@@ -77,23 +77,23 @@ public class folderProject {
 
 	              case 1:   //Fall-August, September, October, November, December.
 
-	                	System.out.println("Case 1 was selected");
+	                	System.out.println ("Case 1 was selected");
 
 	               		break;
 
-	              case 2:   //Spring-January, February, March, April, May
+	              case 2:   //Spring-January, February, March, April, May.
 
-	                	System.out.println("Case 2 was selected");
+	                	System.out.println ("Case 2 was selected");
 
 	                	break;
 
-	              case 3:   //Summer-June, July, 
+	              case 3:   //Summer-June, July. 
 
-	                	System.out.println("Case 3 was selected");
+	                	System.out.println ("Case 3 was selected");
 
 	                	break;
 	                  
-	              case 4:   //Exit program
+	              case 4:   //Exit program.
 
 	               		System.out.println ("Thank you for using my program!");
 
@@ -101,14 +101,12 @@ public class folderProject {
 
 	            default:
 
-	                	System.out.println("Unknown Selection, please try a different input: ");
+	                	System.out.println ("Unknown Selection, please try a different input: ");
 
 	            }
+            }	while(semFolder < 1 || semFolder > 3);
 
-            }	while (semFolder < 1 || semFolder > 3);
-
-     System.out.println("\nThank you for using my program!");
-
+     System.out.println ("\nThank you for using my program!");
    }
    
   	//My menu metho
@@ -127,6 +125,5 @@ public class folderProject {
 	  System.out.println ("3. \tSummer.");
 
 	  System.out.println ("4. \tExit.");
-
    }
 }
