@@ -8,8 +8,8 @@ public class folderProject {
 	//Main method.
    public static void main(String[] args) {
    
-   			//Getting input from keyboard.
-   		Scanner input = new Scanner(System.in);
+   		//Getting input from keyboard.
+   	Scanner input = new Scanner(System.in);
      
      		//Interaction with user.
     	System.out.print ("Type a name for your current semester: ");
