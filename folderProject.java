@@ -3,16 +3,6 @@ import java.util.Scanner;
 
 public class folderProject {
 
-public static void menu(){
-  System.out.println ("----------------------------------");
-  System.out.println ("| Choose your semester's number: |");
-  System.out.println ("----------------------------------");
-  System.out.println ("1. \tFall");
-  System.out.println ("2. \tSpring");
-  System.out.println ("3. \tSummer");
-  System.out.println ("4. \tExit");
-
-}
    public static void main(String[] args) {
      Scanner input = new Scanner(System.in);
      
@@ -79,5 +69,15 @@ public static void menu(){
               }
             } while (semFolder < 1 || semFolder > 3);
      System.out.println("\nThank you for using my program!");
+   }
+   
+   public static void menu(){
+  System.out.println ("----------------------------------");
+  System.out.println ("| Choose your semester's number: |");
+  System.out.println ("----------------------------------");
+  System.out.println ("1. \tFall");
+  System.out.println ("2. \tSpring");
+  System.out.println ("3. \tSummer");
+  System.out.println ("4. \tExit");
    }
  }
