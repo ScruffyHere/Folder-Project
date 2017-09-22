@@ -2,7 +2,7 @@
 import java.io.*;
 import java.util.Scanner;
 
-	//Our Project class.
+	//My Project class.
 public class folderProject {
 
 	//Main method.
