@@ -26,8 +26,7 @@ public class folderProject {
         File desktop = new File(System.getProperty("user.home"), "Desktop");
 
           //Creating folder on Desktop with user's typed file name and if it exists, prompt an error.
-        File f = new File(desktop + "\\" + mainFolder + "\\"); //Future goal is to make it global on Desktop or let user pick where the folder should be saved.
-        
+        File f = new File(desktop + "\\" + mainFolder + "\\");
           //if the file doesn't exist, then make directory.
         if(!f.exists()) {
          f.mkdir();
