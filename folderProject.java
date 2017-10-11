@@ -22,6 +22,7 @@ public class folderProject {
           //Semester's name is stored here.
         String mainFolder = input.nextLine();
         
+        	//setting the variable desktop to be users location to their desktop.
         File desktop = new File(System.getProperty("user.home"), "Desktop");
 
           //Creating folder on Desktop with user's typed file name and if it exists, prompt an error.
