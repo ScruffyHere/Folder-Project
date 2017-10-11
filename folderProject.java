@@ -21,9 +21,11 @@ public class folderProject {
         
           //Semester's name is stored here.
         String mainFolder = input.nextLine();
+        
+        File desktop = new File(System.getProperty("user.home"), "Desktop");
 
           //Creating folder on Desktop with user's typed file name and if it exists, prompt an error.
-        File f = new File("C:\\Users\\ScruffyHere\\Desktop\\" + mainFolder + "\\"); //Future goal is to make it global on Desktop or let user pick where the folder should be saved.
+        File f = new File(desktop + "\\" + mainFolder + "\\"); //Future goal is to make it global on Desktop or let user pick where the folder should be saved.
         
           //if the file doesn't exist, then make directory.
         if(!f.exists()) {
@@ -57,7 +59,7 @@ public class folderProject {
             
           sFolder[i] = input.nextLine();
 
-          File s = new File("C:\\Users\\ScruffyHere\\Desktop\\" + mainFolder + "\\" + sFolder[i]);
+          File s = new File(desktop + "\\" + mainFolder + "\\" + sFolder[i]);
 
            if(!s.exists())
             s.mkdir();
@@ -98,7 +100,7 @@ public class folderProject {
                      
                      for(int h=0; h < monthFall.length; h++)   {
 
-                      File v = new File("C:\\Users\\ScruffyHere\\Desktop\\" + mainFolder + "\\" + sFolder[i] + "\\" + monthFall[h]);
+                      File v = new File(desktop + "\\" + mainFolder + "\\" + sFolder[i] + "\\" + monthFall[h]);
                        v.mkdir();  
                      }                
                     }
@@ -109,7 +111,7 @@ public class folderProject {
 
                         for (int b=0; b < monthWeek.length; b++)  {
 
-                          File c = new File("C:\\Users\\ScruffyHere\\Desktop\\" + mainFolder + "\\" + sFolder[p] + "\\" + monthFall[r] + "\\" + monthWeek[b]);
+                          File c = new File(desktop + "\\" + mainFolder + "\\" + sFolder[p] + "\\" + monthFall[r] + "\\" + monthWeek[b]);
                            c.mkdir();
                         }
                       }
@@ -123,7 +125,7 @@ public class folderProject {
 
                           for (int g=0; g < homeworkClasswork.length; g++)  {
 
-                            File d = new File("C:\\Users\\ScruffyHere\\Desktop\\" + mainFolder + "\\" + sFolder[p] + "\\" + monthFall[r] + "\\" + monthWeek[b] + "\\" + homeworkClasswork[g]);
+                            File d = new File(desktop + "\\" + mainFolder + "\\" + sFolder[p] + "\\" + monthFall[r] + "\\" + monthWeek[b] + "\\" + homeworkClasswork[g]);
                              d.mkdir();
                           }
                         }
@@ -136,7 +138,7 @@ public class folderProject {
                      
                      for(int h=0; h < monthSpring.length; h++)   {
 
-                      File v = new File("C:\\Users\\ScruffyHere\\Desktop\\" + mainFolder + "\\" + sFolder[i] + "\\" + monthSpring[h]);
+                      File v = new File(desktop + "\\" + mainFolder + "\\" + sFolder[i] + "\\" + monthSpring[h]);
                        v.mkdir();  
                      }                
                     }
@@ -147,7 +149,7 @@ public class folderProject {
 
                         for (int b=0; b < monthWeek.length; b++)  {
 
-                          File c = new File("C:\\Users\\ScruffyHere\\Desktop\\" + mainFolder + "\\" + sFolder[p] + "\\" + monthSpring[r] + "\\" + monthWeek[b]);
+                          File c = new File(desktop + "\\" + mainFolder + "\\" + sFolder[p] + "\\" + monthSpring[r] + "\\" + monthWeek[b]);
                            c.mkdir();
                         }
                       }
@@ -161,7 +163,7 @@ public class folderProject {
 
                           for (int g=0; g < homeworkClasswork.length; g++)  {
 
-                            File d = new File("C:\\Users\\ScruffyHere\\Desktop\\" + mainFolder + "\\" + sFolder[p] + "\\" + monthSpring[r] + "\\" + monthWeek[b] + "\\" + homeworkClasswork[g]);
+                            File d = new File(desktop + "\\" + mainFolder + "\\" + sFolder[p] + "\\" + monthSpring[r] + "\\" + monthWeek[b] + "\\" + homeworkClasswork[g]);
                              d.mkdir();
                           }
                         }
@@ -174,7 +176,7 @@ public class folderProject {
                      
                      for(int h=0; h < monthSummer.length; h++)   {
 
-                      File v = new File("C:\\Users\\ScruffyHere\\Desktop\\" + mainFolder + "\\" + sFolder[i] + "\\" + monthSummer[h]);
+                      File v = new File(desktop + "\\" + mainFolder + "\\" + sFolder[i] + "\\" + monthSummer[h]);
                        v.mkdir();  
                      }                
                     }
@@ -185,7 +187,7 @@ public class folderProject {
 
                         for (int b=0; b < monthWeek.length; b++)  {
 
-                          File c = new File("C:\\Users\\ScruffyHere\\Desktop\\" + mainFolder + "\\" + sFolder[p] + "\\" + monthSummer[r] + "\\" + monthWeek[b]);
+                          File c = new File(desktop + "\\" + mainFolder + "\\" + sFolder[p] + "\\" + monthSummer[r] + "\\" + monthWeek[b]);
                            c.mkdir();
                         }
                       }
@@ -199,7 +201,7 @@ public class folderProject {
 
                           for (int g=0; g < homeworkClasswork.length; g++)  {
 
-                            File d = new File("C:\\Users\\ScruffyHere\\Desktop\\" + mainFolder + "\\" + sFolder[p] + "\\" + monthSummer[r] + "\\" + monthWeek[b] + "\\" + homeworkClasswork[g]);
+                            File d = new File(desktop + "\\" + mainFolder + "\\" + sFolder[p] + "\\" + monthSummer[r] + "\\" + monthWeek[b] + "\\" + homeworkClasswork[g]);
                              d.mkdir();
                           }
                         }
@@ -218,7 +220,8 @@ public class folderProject {
             } while(semFolder < 1 || semFolder > 3);
 
         //End of program message to user.
-     System.out.println ("\nThank you for using my program!");
+     System.out.println ("\nYour folder is located on your Desktop.");
+     System.out.println ("Thank you for using my program!");
    }
    
     //My menu
