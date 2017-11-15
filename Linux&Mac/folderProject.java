@@ -2,6 +2,7 @@
   Sina Karimi
   Programmed on Windows 10,
   This program creates a main folder and contains all your classes within it and is organized upon the semester you're taking your classes.
+  Linux/Mac version
 */
   //Library imports for folder creation('*' means import all library) and keyboard input.
 import java.io.*;
@@ -17,7 +18,7 @@ public class folderProject {
     Scanner input = new Scanner(System.in);
      
         //Interaction with user.
-      System.out.println ("\nType a name for your current semester: ");
+      System.out.println("\nType a name for your current semester: ");
         
           //Semester's name is stored here.
         String mainFolder = input.nextLine();
@@ -27,20 +28,22 @@ public class folderProject {
 
           //Creating folder on Desktop with user's typed file name and if it exists, prompt an error.
         File f = new File(desktop + "/" + mainFolder + "/");
-          //if the file doesn't exist, then make directory.
-        if(!f.exists()) {
-         f.mkdir();
-        }
 
-          //prompt error and exit the program.
-        else  {
+            //if the file doesn't exist, then make directory.
+          if(!f.exists()) {
 
-          System.err.println ("Directory already exists.");
-           System.exit(0); //Since directory already exists, I want to repromt folder name question instead of existing program.
-        }
+           f.mkdir();
+          }
+
+            //prompt error and exit the program.
+          else  {
+
+            System.err.println("Directory already exists.");
+            System.exit(0);
+          }
 
           //Prompting second question and saving it in subFolder, and according to user input create that many folders inside our mainFolder.
-        System.out.print ("\nEnter the number of classes you're taking: ");
+        System.out.print("\nEnter the number of classes you're taking: ");
 
         int subFolder = input.nextInt();  //Saving everything inside an array.
 
@@ -55,7 +58,7 @@ public class folderProject {
           //getting name input for each class you're taking, and creating it.
         for(int i=0; i < subFolder; i++)   {
 
-          System.out.println ("\nEnter a name for your " + classDays[i] + " class: ");
+          System.out.println("\nEnter a name for your " + classDays[i] + " class: ");
             
           sFolder[i] = input.nextLine();
 
@@ -67,7 +70,7 @@ public class folderProject {
             //if name already exists, prompt error and exit the program.
           else {
 
-          System.err.println ("Directory already exists.");
+          System.err.println("Directory already exists.");
             System.exit(0); //Since directory already exists, I want to repromt folder name question instead of existing program.
           }
         }
@@ -105,11 +108,11 @@ public class folderProject {
                      }                
                     }
 
-                    for (int p=0; p < subFolder; p++) {
+                    for (int p = 0; p < subFolder; p++) {
 
-                      for (int r=0; r < monthFall.length; r++)  {
+                      for (int r = 0; r < monthFall.length; r++)  {
 
-                        for (int b=0; b < monthWeek.length; b++)  {
+                        for (int b = 0; b < monthWeek.length; b++)  {
 
                           File c = new File(desktop + "/" + mainFolder + "/" + sFolder[p] + "/" + monthFall[r] + "/" + monthWeek[b]);
                            c.mkdir();
@@ -117,13 +120,13 @@ public class folderProject {
                       }
                     }
 
-                    for (int p=0; p < subFolder; p++) {
+                    for (int p = 0; p < subFolder; p++) {
 
-                      for (int r=0; r < monthFall.length; r++)  {
+                      for (int r = 0; r < monthFall.length; r++)  {
 
-                        for (int b=0; b < monthWeek.length; b++)  {
+                        for (int b = 0; b < monthWeek.length; b++)  {
 
-                          for (int g=0; g < homeworkClasswork.length; g++)  {
+                          for (int g = 0; g < homeworkClasswork.length; g++)  {
 
                             File d = new File(desktop + "/" + mainFolder + "/" + sFolder[p] + "/" + monthFall[r] + "/" + monthWeek[b] + "/" + homeworkClasswork[g]);
                              d.mkdir();
@@ -134,20 +137,20 @@ public class folderProject {
                       break;
 
                 case 2:   //Spring-January, February, March, April, May.
-                    for(int i=0; i < subFolder; i++) {
+                    for(int i = 0; i < subFolder; i++) {
                      
-                     for(int h=0; h < monthSpring.length; h++)   {
+                     for(int h = 0; h < monthSpring.length; h++)   {
 
                       File v = new File(desktop + "/" + mainFolder + "/" + sFolder[i] + "/" + monthSpring[h]);
                        v.mkdir();  
                      }                
                     }
 
-                    for (int p=0; p < subFolder; p++) {
+                    for (int p = 0; p < subFolder; p++) {
 
-                      for (int r=0; r < monthSpring.length; r++)  {
+                      for (int r = 0; r < monthSpring.length; r++)  {
 
-                        for (int b=0; b < monthWeek.length; b++)  {
+                        for (int b = 0; b < monthWeek.length; b++)  {
 
                           File c = new File(desktop + "/" + mainFolder + "/" + sFolder[p] + "/" + monthSpring[r] + "/" + monthWeek[b]);
                            c.mkdir();
@@ -155,13 +158,13 @@ public class folderProject {
                       }
                     }
 
-                    for (int p=0; p < subFolder; p++) {
+                    for (int p = 0; p < subFolder; p++) {
 
-                      for (int r=0; r < monthSpring.length; r++)  {
+                      for (int r = 0; r < monthSpring.length; r++)  {
 
-                        for (int b=0; b < monthWeek.length; b++)  {
+                        for (int b = 0; b < monthWeek.length; b++)  {
 
-                          for (int g=0; g < homeworkClasswork.length; g++)  {
+                          for (int g = 0; g < homeworkClasswork.length; g++)  {
 
                             File d = new File(desktop + "/" + mainFolder + "/" + sFolder[p] + "/" + monthSpring[r] + "/" + monthWeek[b] + "/" + homeworkClasswork[g]);
                              d.mkdir();
@@ -172,20 +175,20 @@ public class folderProject {
                       break;
 
                 case 3:   //Summer-June, July. 
-                    for(int i=0; i < subFolder; i++) {
+                    for(int i = 0; i < subFolder; i++) {
                      
-                     for(int h=0; h < monthSummer.length; h++)   {
+                     for(int h = 0; h < monthSummer.length; h++)   {
 
                       File v = new File(desktop + "/" + mainFolder + "/" + sFolder[i] + "/" + monthSummer[h]);
                        v.mkdir();  
                      }                
                     }
 
-                    for (int p=0; p < subFolder; p++) {
+                    for (int p = 0; p < subFolder; p++) {
 
-                      for (int r=0; r < monthSummer.length; r++)  {
+                      for (int r = 0; r < monthSummer.length; r++)  {
 
-                        for (int b=0; b < monthWeek.length; b++)  {
+                        for (int b = 0; b < monthWeek.length; b++)  {
 
                           File c = new File(desktop + "/" + mainFolder + "/" + sFolder[p] + "/" + monthSummer[r] + "/" + monthWeek[b]);
                            c.mkdir();
@@ -193,13 +196,13 @@ public class folderProject {
                       }
                     }
 
-                    for (int p=0; p < subFolder; p++) {
+                    for (int p = 0; p < subFolder; p++) {
 
-                      for (int r=0; r < monthSummer.length; r++)  {
+                      for (int r = 0; r < monthSummer.length; r++)  {
 
-                        for (int b=0; b < monthWeek.length; b++)  {
+                        for (int b = 0; b < monthWeek.length; b++)  {
 
-                          for (int g=0; g < homeworkClasswork.length; g++)  {
+                          for (int g = 0; g < homeworkClasswork.length; g++)  {
 
                             File d = new File(desktop + "/" + mainFolder + "/" + sFolder[p] + "/" + monthSummer[r] + "/" + monthWeek[b] + "/" + homeworkClasswork[g]);
                              d.mkdir();
@@ -211,7 +214,7 @@ public class folderProject {
                     
                 case 4:   //Exit program.
                     System.out.println ("Thank you for using my program!");
-                      System.exit(0);
+                    System.exit(0);
 
                 //Prompting this message if unknown selection.
               default:
@@ -219,9 +222,23 @@ public class folderProject {
               }
             } while(semFolder < 1 || semFolder > 3);
 
+     input.nextLine(); //Cleaning the buffer.
+
         //End of program message to user.
-     System.out.println ("\nYour folder is located on your Desktop.");
-     System.out.println ("Thank you for using my program!");
+    System.out.println ("\n\nYour folder has been created and is located on your Desktop.");
+    System.out.println ("\n-----------------------------------");
+    System.out.println ("| Thank you for using my program! |");
+    System.out.print   ("-----------------------------------");
+    System.out.println ("\n\nPress ENTER key to exit the program...");
+      
+        //Press Enter to exit the program
+      try {
+
+        System.in.read();
+      }
+
+      catch(Exception e)
+      {}
    }
    
     //My menu
@@ -235,5 +252,5 @@ public class folderProject {
     System.out.println ("2. \tSpring.");
     System.out.println ("3. \tSummer.");
     System.out.println ("4. \tExit.");
-   }
+  }
 }
