@@ -222,9 +222,16 @@ public class folderProject {
         //End of program message to user.
     System.out.println ("\nYour folder is located on your Desktop.");
     System.out.println ("Thank you for using my program!");
-    System.out.println ("\nPress any key to exit the program.");
-    input.nextLine();
-	System.exit(0);
+    System.out.println ("\n\nPress ENTER key to exit the program...");
+      
+        //Press Enter to exit the program
+      try {
+
+        System.in.read();
+      }
+
+      catch(Exception e)
+      {}
    }
    
     //My menu
