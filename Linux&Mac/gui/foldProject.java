@@ -36,11 +36,11 @@ public class foldProject extends Application {
 	String[] folderNames = new String[10];
 	String semesterName;
 
-	String[] monthFall = {"August", "September", "October", "November", "December"};
-	String[] monthSpring = {"January", "February", "March", "April", "May"};
+	String[] monthFall = {"1 - August", "2 - September", "3 - October", "4 - November", "5 - December"};
+	String[] monthSpring = {"1 - January", "2 - February", "3 - March", "4 - April", "5 - May"};
 	String[] monthWeek = {"Week 1", "Week 2", "Week 3", "Week 4"};
     String[] homeworkClasswork = {"Homework", "Classwork"};
-    String[] monthSummer = {"June", "July"};
+    String[] monthSummer = {"1 - June", "2 - July"};
 
 	private int semestermakeNumber;
 
