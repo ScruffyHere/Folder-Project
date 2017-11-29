@@ -1,0 +1,6 @@
+.root {
+    -fx-background-color: rgba(4,2,3,0.1);
+    -fx-background-image: url('finish.gif'), url('finish1.gif');
+    -fx-background-position: center center;
+    -fx-background-size: 120;
+}

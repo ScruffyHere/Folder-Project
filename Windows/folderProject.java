@@ -83,11 +83,11 @@ public class folderProject {
               semFolder = input.nextInt();
 
                 //Hard coding the months of the semester.
-              String[] monthFall = {"August", "September", "October", "November", "December"};
+              String[] monthFall = {"1 - August", "2 - September", "3 - October", "4 - November", "5 - December"};
 
-              String[] monthSpring = {"January", "February", "March", "April", "May"};
+              String[] monthSpring = {"1 - January", "2 - February", "3 - March", "4 - April", "5 - May"};
 
-              String[] monthSummer = {"June", "July"};
+              String[] monthSummer = {"1 - June", "2 - July"};
 
                 //Hard coding the weeks 1-4.
               String[] monthWeek = {"Week 1", "Week 2", "Week 3", "Week 4"};

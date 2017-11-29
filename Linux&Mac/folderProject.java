@@ -64,14 +64,14 @@ public class folderProject {
 
           File s = new File(desktop + "/" + mainFolder + "/" + sFolder[i]);
 
-           if(!s.exists())
+          if(!s.exists())
             s.mkdir();
 
             //if name already exists, prompt error and exit the program.
           else {
 
           System.err.println("Directory already exists.");
-            System.exit(0); //Since directory already exists, I want to repromt folder name question instead of existing program.
+          System.exit(0); //Since directory already exists, I want to repromt folder name question instead of existing program.
           }
         }
             int semFolder;
@@ -83,11 +83,11 @@ public class folderProject {
               semFolder = input.nextInt();
 
                 //Hard coding the months of the semester.
-              String[] monthFall = {"August", "September", "October", "November", "December"};
+              String[] monthFall = {"1 - August", "2 - September", "3 - October", "4 - November", "5 - December"};
 
-              String[] monthSpring = {"January", "February", "March", "April", "May"};
+              String[] monthSpring = {"1 - January", "2 - February", "3 - March", "4 - April", "5 - May"};
 
-              String[] monthSummer = {"June", "July"};
+              String[] monthSummer = {"1 - June", "2 - July"};
 
                 //Hard coding the weeks 1-4.
               String[] monthWeek = {"Week 1", "Week 2", "Week 3", "Week 4"};

@@ -1,0 +1,6 @@
+.root {
+    -fx-background-color: rgba(4,2,3,0.1);
+    -fx-background-image: url('back.gif');
+    -fx-background-size: stretch;
+    -fx-background-position: center center;
+}

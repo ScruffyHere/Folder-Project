@@ -1,6 +1,8 @@
 import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.ButtonType;
 import javafx.application.Application;
 import javafx.scene.control.TextField;
@@ -11,13 +13,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.control.Alert;
 import javafx.event.EventHandler;
 import javafx.scene.shape.Circle;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.StageStyle;
 import javafx.stage.Modality;
 import javafx.scene.image.*;
 import javafx.scene.Scene;
@@ -55,13 +57,18 @@ public class foldProject extends Application {
    		pane.setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
    		pane.setHgap(5.5);
    		pane.setVgap(5.5);
+      pane.getStylesheets().add("darkButton.css");
 
    			//creating the objects to go in the first window
    			//First asking for semesters folder name
    		Label semesterLabel = new Label("Type a name for your semester's folder: ");
 
+      semesterLabel.getStylesheets().add("Label.css");
+
    			//asking for number of classes taken
    		Label semesterNumber = new Label("Enter the number of classes you're taking");
+
+      semesterNumber.getStylesheets().add("Label.css");
 
    			//creating cancel button
    		Button cnclButton = new Button("Cancel");
@@ -98,6 +105,15 @@ public class foldProject extends Application {
    			//setting the scene object to scene
    		myFirstwindow.setScene(firstWindow);
 
+      firstWindow.getStylesheets().add("main.css");
+
+      myFirstwindow.initStyle(StageStyle.TRANSPARENT);
+      ProgressIndicator loadProgress1 = new ProgressIndicator();
+      loadProgress1.setSkin(null);
+      loadProgress1.setPrefWidth(50);
+      VBox box1 = new VBox();
+      box1.getChildren().add(loadProgress1);
+
    		okButton.setOnAction(e -> makeFolder(myFirstwindow));
 
    			//show the stage
@@ -125,12 +141,15 @@ public class foldProject extends Application {
    		pane2.setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
    		pane2.setHgap(5.5);
    		pane2.setVgap(5.5);
+      pane2.getStylesheets().add("darkButton.css");
 
    		Label[] classLabels = new Label[10];
 
    		for (int i = 0; i < semestermakeNumber; i++ ) {
    			
    			classLabels[i] = new Label("Type your class' name: ");
+
+        classLabels[i].getStylesheets().add("Label.css");
 
    			classDays[i] = new TextField();
 
@@ -153,13 +172,21 @@ public class foldProject extends Application {
 
    		secondWindow.setScene(mysecondWindow);
 
+      mysecondWindow.getStylesheets().add("main.css");
+
+      secondWindow.initStyle(StageStyle.TRANSPARENT);
+      ProgressIndicator loadProgress2 = new ProgressIndicator();
+      loadProgress2.setSkin(null);
+      loadProgress2.setPrefWidth(50);
+      VBox box2 = new VBox();
+      box2.getChildren().add(loadProgress2);
+
    		secondWindow.showAndWait();
 
-////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
-   			//third window
-   			
-   		Alert alert = new Alert(AlertType.CONFIRMATION);
+   		//third window	
+   	Alert alert = new Alert(AlertType.CONFIRMATION);
 		alert.setTitle(null);
 		alert.setHeaderText(null);
 		alert.setContentText("Click on the semester you're currently enrolled in from the following.");
@@ -171,7 +198,19 @@ public class foldProject extends Application {
 
 		alert.getButtonTypes().setAll(springButton, fallButton, summerButton, cancelButton);
 
-		Stage stage3 = (Stage) alert.getDialogPane().getScene().getWindow(); 
+    DialogPane dialogPane = alert.getDialogPane();
+    dialogPane.getStylesheets().add(
+    getClass().getResource("myDialog.css").toExternalForm());
+    dialogPane.getStyleClass().add("myDialog");
+      
+      alert.initStyle(StageStyle.TRANSPARENT);
+      ProgressIndicator loadProgress3 = new ProgressIndicator();
+      loadProgress3.setSkin(null);
+      loadProgress3.setPrefWidth(50);
+      VBox box3 = new VBox();
+      box3.getChildren().add(loadProgress3);
+
+		Stage stage3 = (Stage) alert.getDialogPane().getScene().getWindow();
 
 		stage3.getIcons().add(new Image("blank.png"));
 
@@ -185,7 +224,7 @@ public class foldProject extends Application {
                        
             	for(int h = 0; h < monthSpring.length; h++)   {
 
-             	File v = new File(desktop + / + semesterName + / + folderNames[i] + / + monthSpring[h]);
+             	File v = new File(desktop + "/" + semesterName + "/" + folderNames[i] + "/" + monthSpring[h]);
                 	v.mkdir();  
             	}                
            	}
@@ -196,7 +235,7 @@ public class foldProject extends Application {
 
                		for (int b = 0; b < monthWeek.length; b++)  {
 
-                 		File c = new File(desktop + / + semesterName + / + folderNames[p] + / + monthSpring[r] + / + monthWeek[b]);
+                 		File c = new File(desktop + "/" + semesterName + "/" + folderNames[p] + "/" + monthSpring[r] + "/" + monthWeek[b]);
                			c.mkdir();
                		}
              	}
@@ -210,21 +249,23 @@ public class foldProject extends Application {
 
                  		for (int g = 0; g < homeworkClasswork.length; g++)  {
 
-                   			File d = new File(desktop + / + semesterName + / + folderNames[p] + / + monthSpring[r] + / + monthWeek[b] + / + homeworkClasswork[g]);
+                   			File d = new File(desktop + "/" + semesterName + "/" + folderNames[p] + "/" + monthSpring[r] + "/" + monthWeek[b] + "/" + homeworkClasswork[g]);
                     		d.mkdir();
                  		}
                		}
              	}
            	}
         }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
 		else if (result.get() == fallButton) {
 
 			for(int i = 0; i < semestermakeNumber; i++) {
                        
             	for(int h = 0; h < monthFall.length; h++)   {
 
-             	File v = new File(desktop + / + semesterName + / + folderNames[i] + / + monthFall[h]);
+             	File v = new File(desktop + "/" + semesterName + "/" + folderNames[i] + "/" + monthFall[h]);
                 	v.mkdir();  
             	}                
            	}
@@ -235,7 +276,7 @@ public class foldProject extends Application {
 
                		for (int b = 0; b < monthWeek.length; b++)  {
 
-                 		File c = new File(desktop + / + semesterName + / + folderNames[p] + / + monthFall[r] + / + monthWeek[b]);
+                 		File c = new File(desktop + "/" + semesterName + "/" + folderNames[p] + "/" + monthFall[r] + "/" + monthWeek[b]);
                			c.mkdir();
                		}
              	}
@@ -249,21 +290,23 @@ public class foldProject extends Application {
 
                  		for (int g = 0; g < homeworkClasswork.length; g++)  {
 
-                   			File d = new File(desktop + / + semesterName + / + folderNames[p] + / + monthFall[r] + / + monthWeek[b] + / + homeworkClasswork[g]);
+                   			File d = new File(desktop + "/" + semesterName + "/" + folderNames[p] + "/" + monthFall[r] + "/" + monthWeek[b] + "/" + homeworkClasswork[g]);
                     		d.mkdir();
                  		}
                		}
              	}
            	}
 		}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
 		else if (result.get() == summerButton) {
 			
 			for(int i = 0; i < semestermakeNumber; i++) {
                        
             	for(int h = 0; h < monthSummer.length; h++)   {
 
-             	File v = new File(desktop + / + semesterName + / + folderNames[i] + / + monthSummer[h]);
+             	File v = new File(desktop + "/" + semesterName + "/" + folderNames[i] + "/" + monthSummer[h]);
                 	v.mkdir();  
             	}                
            	}
@@ -274,7 +317,7 @@ public class foldProject extends Application {
 
                		for (int b = 0; b < monthWeek.length; b++)  {
 
-                 		File c = new File(desktop + / + semesterName + / + folderNames[p] + / + monthSummer[r] + / + monthWeek[b]);
+                 		File c = new File(desktop + "/" + semesterName + "/" + folderNames[p] + "/" + monthSummer[r] + "/" + monthWeek[b]);
                			c.mkdir();
                		}
              	}
@@ -288,7 +331,7 @@ public class foldProject extends Application {
 
                  		for (int g = 0; g < homeworkClasswork.length; g++)  {
 
-                   			File d = new File(desktop + / + semesterName + / + folderNames[p] + / + monthSummer[r] + / + monthWeek[b] + / + homeworkClasswork[g]);
+                   			File d = new File(desktop + "/" + semesterName + "/" + folderNames[p] + "/" + monthSummer[r] + "/" + monthWeek[b] + "/" + homeworkClasswork[g]);
                     		d.mkdir();
                  		}
                		}
@@ -299,7 +342,9 @@ public class foldProject extends Application {
 			System.exit(0);
 		}
 
-		GridPane finalPane = new GridPane();
+////////////////////////////////////////////////////////////////////////////////////
+	
+  	GridPane finalPane = new GridPane();
    		finalPane.setAlignment(Pos.CENTER);
 
    			//setting the padding, size between the stage and scene
@@ -309,12 +354,17 @@ public class foldProject extends Application {
 
    		Button finishButton = new Button("Finish!");
 
-   		Label finalMessage = new Label("Thank you for using my program!\nYour folder is ready, and has been saved to your desktop.");
+      finishButton.getStylesheets().add("darkButton.css");
+
+   		Label finalMessage = new Label("\n\n\n\t\t\t\t\tThank you for using my program..\n\t\t\t\tYour folder has been saved on your desktop!");
+
+      finalMessage.getStylesheets().add("finalLabel.css");
 
    			//aligning everything using pane.add
    		finalPane.add(finalMessage, 0, 0);
-   		finalPane.add(finishButton, 1, 4);
+   		finalPane.add(finishButton, 2, 3);
    		finalPane.setAlignment(Pos.CENTER);
+      finalPane.getStylesheets().add("darkButton.css");
 
    			//adding all pane into the scene object
    		Scene lastWindow = new Scene(finalPane);
@@ -322,6 +372,12 @@ public class foldProject extends Application {
    			//creating the stage
    		Stage mylastWindow = new Stage();
 
+   		mylastWindow.initStyle(StageStyle.TRANSPARENT);
+   		ProgressIndicator loadProgress = new ProgressIndicator();
+   		loadProgress.setSkin(null);
+   		loadProgress.setPrefWidth(50);
+   		VBox box = new VBox();
+   		box.getChildren().add(loadProgress);
    		mylastWindow.getIcons().add(new Image("blank.png"));
 
    			//setting title message
@@ -330,14 +386,12 @@ public class foldProject extends Application {
    			//setting the scene object to scene
    		mylastWindow.setScene(lastWindow);
 
+      lastWindow.getStylesheets().add("thankyou.css");
+
    		finishButton.setOnAction(e -> System.exit(0));
 
    			//show the stage
    		mylastWindow.showAndWait();
-
-
-
-
    }
 
    private void makeFolder(Stage stage)	{
@@ -348,7 +402,7 @@ public class foldProject extends Application {
 
    	File desktop = new File(System.getProperty("user.home"), "Desktop");
 
-	File f = new File(desktop + / + semesterName + /);
+	File f = new File(desktop + "/" + semesterName + "/");
 
 	if (!f.exists()) {
 		f.mkdir();
@@ -373,7 +427,7 @@ public class foldProject extends Application {
 
   		folderNames[i] = classDays[i].getText();
 
-   		File s = new File(desktop + / + semesterName + / + folderNames[i]);
+   		File s = new File(desktop + "/" + semesterName + "/" + folderNames[i]);
 
         if(!s.exists())
         	s.mkdir();
