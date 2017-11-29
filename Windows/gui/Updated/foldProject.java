@@ -81,10 +81,15 @@ public class foldProject extends Application {
 
    			//aligning everything using pane.add
    		pane.add(semesterLabel, 0, 0);
+
    		pane.add(semesterTextfield, 1, 0);
+
    		pane.add(semesterNumber, 0, 1);
+
    		pane.add(semesternumberField, 1, 1);
+
    		pane.add(cnclButton, 14/4, 2);
+
    		pane.add(okButton, 2, 2);
 
    			//aligning buttons
@@ -108,10 +113,15 @@ public class foldProject extends Application {
       	firstWindow.getStylesheets().add("main.css");
 
       	myFirstwindow.initStyle(StageStyle.TRANSPARENT);
+
       	ProgressIndicator loadProgress1 = new ProgressIndicator();
+
       	loadProgress1.setSkin(null);
+
       	loadProgress1.setPrefWidth(50);
+
       	VBox box1 = new VBox();
+
       	box1.getChildren().add(loadProgress1);
 
    		okButton.setOnAction(e -> makeFolder(myFirstwindow));
@@ -139,8 +149,11 @@ public class foldProject extends Application {
 
    			//setting the padding, size between the stage and scene
    		pane2.setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
+
    		pane2.setHgap(5.5);
+
    		pane2.setVgap(5.5);
+   		
       	pane2.getStylesheets().add("darkButton.css");
 
    		Label[] classLabels = new Label[10];
